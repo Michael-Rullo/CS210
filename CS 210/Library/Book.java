@@ -59,11 +59,12 @@ public class Book {
     }
 
     public String getAny(Book book, int parameter) {
+        String returnValue = "";
         switch (parameter) {
-            case 1: return this.author;
-            case 2: return this.title;
-            case 3: return Integer.toString(this.ibsn);
+            case 1: returnValue = this.title;
+            case 2: returnValue = this.author;
+            case 3: returnValue = Integer.toString(this.ibsn);
         }
-        return "";
+        return returnValue;
     }
 }

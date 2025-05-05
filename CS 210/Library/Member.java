@@ -9,10 +9,10 @@ public class Member {
     public Member(String name){
         this.name = name;
         this.memberID = id;
-        idIncrease();
+        Member.idIncrease();
     }
 
-    public void idIncrease() {
+    public static void idIncrease() {
         id += 1;
     }
 
