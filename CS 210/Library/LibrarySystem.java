@@ -81,6 +81,22 @@ public class LibrarySystem {
     }
 
     public void returnBook(int id, String title) {
-        
+        Set<Book> memberBookSet = memberBooks.get(id);
+        for (Book existingBook : memberBookSet) {
+            if (existingBook.getTitle().equals(title)) {
+                memberBookSet.remove(existingBook);
+            }
+        }
+    }
+
+    public void listBorrowedBooks(int id) {
+        Set<Book> memberBookSet = memberBooks.get(id);
+        for (Book existingBook : memberBookSet) {
+            printBook(existingBook);
+        }
+    }
+
+    public void exit() {
+        System.exit(0);
     }
 }

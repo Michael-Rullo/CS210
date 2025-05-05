@@ -43,21 +43,6 @@ public class Book {
         return this.title;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        Book other = (Book) obj;
-        return this.ibsn == other.ibsn && this.title.equals(other.title) && this.author.equals(other.author);
-    }
-
-    @Override
-    public int hashCode() {
-        int result = 17;
-        result = 31 * result + (title != null ? title.hashCode() : 0);
-        result = 31 * result + (author != null ? author.hashCode() : 0);
-        result = 31 * result + ibsn;
-        return result;
-    }
-
     public String getAny(Book book, int parameter) {
         String returnValue = "";
         switch (parameter) {
