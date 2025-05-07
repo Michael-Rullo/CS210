@@ -4,10 +4,10 @@ public class Book {
     
     private String title;
     private String author;
-    private int ibsn;
+    private long ibsn;
     private int copies = 0;
 
-    public Book(String title, String author, int ibsn, int copies) {
+    public Book(String title, String author, long ibsn, int copies) {
         this.title = title;
         this.author =  author;
         this.ibsn = ibsn;
@@ -31,7 +31,7 @@ public class Book {
         return this.copies;
     }
 
-    public int getIBSN() {
+    public long getIBSN() {
         return this.ibsn;
     }
 
@@ -43,12 +43,15 @@ public class Book {
         return this.title;
     }
 
-    public String getAny(Book book, int parameter) {
+    public String getAny(int parameter) {
         String returnValue = "";
         switch (parameter) {
             case 1: returnValue = this.title;
+                break;
             case 2: returnValue = this.author;
-            case 3: returnValue = Integer.toString(this.ibsn);
+                break;
+            case 3: returnValue = Long.toString(this.ibsn);
+                break;
         }
         return returnValue;
     }
